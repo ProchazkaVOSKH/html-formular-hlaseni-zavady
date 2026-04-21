@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hlášení technické závady</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-light-grey">
+
+    <main class="w3-container w3-section">
+        <div class="w3-content">
+
+            <article class="w3-card w3-white w3-padding">
+                <header>
+                    <h1 class="w3-text-blue">Hlášení závady v učebně</h1>
+                    <p class="w3-text-grey">Vyplňte prosím podrobnosti o problému.</p>
+                </header>
+                <hr>
+
+                <form action="https://edu.voskh.cz/vyuka/hlaseni-zavad/check.php" method="post">
+
+                    <!-- Jméno -->
+                    <div class="w3-margin-bottom">
+                        <label for="jmeno"><b>Celé jméno *</b></label>
+                        <input class="w3-input w3-border" type="text" id="jmeno" name="jmeno" placeholder="Jan Novák" required>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="w3-margin-bottom">
+                        <label for="email"><b>E-mail *</b></label>
+                        <input class="w3-input w3-border" type="email" id="email" name="email" placeholder="novak@skola.cz" required>
+                    </div>
+
+                    <!-- Místnost -->
+                    <div class="w3-margin-bottom">
+                        <label for="mistnost"><b>Místnost *</b></label>
+                        <select class="w3-select w3-border" id="mistnost" name="mistnost" required>
+                            <option value="" disabled selected>Vyberte místnost…</option>
+                            <option value="L3">Učebna L3</option>
+                            <option value="L4">Učebna L4</option>
+                            <option value="U1">Učebna U1</option>
+                            <option value="U01">Učebna U01</option>
+                            <option value="U02">Učebna U02</option>
+                        </select>
+                    </div>
+
+                    <!-- Priorita -->
+                    <fieldset class="w3-border-0 w3-margin-bottom">
+                        <legend><b>Priorita hlášení</b></legend>
+                        <div class="w3-row-padding">
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-radio" type="radio" id="priorita-nizka" name="priorita" value="nizka" checked>
+                                <label>Nízká</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-radio" type="radio" id="priorita-stredni" name="priorita" value="stredni">
+                                <label>Střední</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-radio" type="radio" id="priorita-vysoka" name="priorita" value="vysoka">
+                                <label>Vysoká</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Co nefunguje -->
+                    <fieldset class="w3-border-0 w3-margin-bottom">
+                        <legend><b>Co nefunguje?</b></legend>
+                        <div class="w3-row-padding">
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-monitor" name="zavady[]" value="monitor">
+                                <label>Monitor</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-klavesnice" name="zavady[]" value="klavesnice">
+                                <label>Klávesnice</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-zvuk" name="zavady[]" value="zvuk">
+                                <label>Zvuk</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-mys" name="zavady[]" value="mys">
+                                <label>Myš</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-tiskarna" name="zavady[]" value="tiskarna">
+                                <label>Tiskárna</label>
+                            </div>
+                            <div class="w3-third w3-margin-bottom">
+                                <input class="w3-check" type="checkbox" id="zavada-wifi" name="zavady[]" value="wi-fi">
+                                <label>Wi-Fi</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Popis -->
+                    <div class="w3-margin-bottom">
+                        <label for="popis"><b>Podrobný popis závady *</b></label>
+                        <textarea class="w3-input w3-border" id="popis" name="popis" rows="4"
+                            placeholder="Popište přesně, co se děje…" required minlength="20"></textarea>
+                    </div>
+
+                    <!-- Tlačítka -->
+                    <div class="w3-row-padding">
+                        <div class="w3-half w3-margin-bottom">
+                            <button type="submit" class="w3-button w3-blue w3-block">Odeslat hlášení</button>
+                        </div>
+                        <div class="w3-half w3-margin-bottom">
+                            <button type="reset" class="w3-button w3-light-grey w3-block">Vymazat formulář</button>
+                        </div>
+                    </div>
+
+                </form>
+            </article>
+
+        </div>
+    </main>
+
+</body>
+</html>
